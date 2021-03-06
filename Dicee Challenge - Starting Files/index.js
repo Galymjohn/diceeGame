@@ -1,40 +1,25 @@
-//function numberRoll {
-//  var randomNumber1 = Math.floor((Math.random() * 6) + 1); //integer between 1 amd 8. including both 1 and 8.
-//}
-// var arrayImages = [
-//   "C:/Users/johnn/Documents/GitHub/diceeGame/Dicee Challenge - Starting Files/images/dice1.png",
-//   "C:/Users/johnn/Documents/GitHub/diceeGame/Dicee Challenge - Starting Files/images/dice2.png",
-//   "C:/Users/johnn/Documents/GitHub/diceeGame/Dicee Challenge - Starting Files/images/dice3.png",
-//   "C:/Users/johnn/Documents/GitHub/diceeGame/Dicee Challenge - Starting Files/images/dice3.png",
-//   "C:/Users/johnn/Documents/GitHub/diceeGame/Dicee Challenge - Starting Files/images/dice5.png",
-//   "C:/Users/johnn/Documents/GitHub/diceeGame/Dicee Challenge - Starting Files/images/dice6.png"
-// ];
-// var arrayImages = [
-//   "\images\dice1.png",
-//   "\images\dice2.png",
-//   "\images\dice3.png",
-//   "\images\dice3.png",
-//   "\images\dice5.png",
-//   "\images\dice6.png"
-// ];
-//roll 1
-var randomNumber1 = Math.floor((Math.random() * 6) + 1); //integer between 1 amd 8. including both 1 and 8.
-var diceRoll1 = "images/dice" + randomNumber1 + ".png";
-document.images[0].src = diceRollOne;
 
+//roll 1
+var randomNumber1 = Math.floor((Math.random() * 6) + 1); //integer between 1 amd 6. including both 1 and 6.
+var randomDiceImage = "dice" + randomNumber1 + ".png"; //adding the random number to the string
+var randomImageSource = "images/" + randomDiceImage; // adding images file soutce to the string.
+var image1 = document.querySelectorAll("img")[0];
+image1.setAttribute("src", randomImageSource);
 //rol 2
-// var randomNumber2 = Math.floor((Math.random() * 6) + 1); //integer between 1 amd 8. including both 1 and 8.
-// var diceRoll2 = "images/dice" + randomNumber2 + ".png";
-// document.images[1].src = diceRollOne;
-// var randomNumber2 = Math.floor((Math.random() * 6) + 1); //integer between 1 amd 8. including both 1 and 8.
-// //}
-// function rollOne() {
-//   diceRollOne = arrayImages[randomNumber1];
-//   document.images[0].setAttribute("src",diceRoll1); // in setAttribute(source,change to)
-//   //console.log(diceRollOne);
-// }
-// function rollTwo() {
-//   diceRolltwo = arrayImages[randomNumber2];
-//   document.images[1].setAttribute("src",diceRoll2);  //
-//   //console.log(diceRollOne)
-// }
+var randomNumber2 = Math.floor((Math.random()*6)+1);
+var randomDiceImage2 = "images/dice" + randomNumber2 + ".png";
+var image2 = document.querySelectorAll("img")[1];
+image2.setAttribute("src", randomDiceImage2);
+//Change title to the winners name.
+if(randomNumber1 > randomNumber2){
+  var title = document.querySelector("h1");
+  title.innerHTML=("Player 1 WINS!");
+}
+else if (randomNumber1 < randomNumber2) {
+  var title = document.querySelector("h1");
+  title.innerHTML=("Player 2 WINS!");
+}
+else {
+  var title = document.querySelector("h1");
+  title.innerHTML=("Draw!");
+}
